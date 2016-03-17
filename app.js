@@ -9,6 +9,7 @@ module.exports = function(stockRepository) {
     app.use(middleware.logIncoming);
     app.use(bodyParser.json());
 
+    app.get('/', () => res.send('Hello World!'));
     app.post('/stock', routes.stockUp);
     app.get('/stock/:isbn', routes.getCount);
     app.get('/stock', routes.findAll);
