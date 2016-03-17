@@ -8,8 +8,10 @@ var base = {
     config_vars: {
         MONGOLAB_URI: process.env.MONGOLAB_URI
     },
-    addons: {mongolab: {plan: 'mongolab:sandbox'}},
-    collaborators: ['kwasniewski.mateusz@gmail.com'],
+    addons: {},
+    collaborators: ['wojciech.iskra@schibsted.pl',
+        'titzmateusz@gmail.com',
+        'kzych.loop@gmail.com'],
     features: {
         'runtime-dyno-metadata': {enabled: false},
         'log-runtime-metrics': {enabled: false},
@@ -24,5 +26,6 @@ var base = {
 
 module.exports = {
     config: base,
-    configurator: configurator
+    configurator: configurator,
+    heroin: heroin
 };

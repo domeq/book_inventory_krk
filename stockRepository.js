@@ -4,7 +4,7 @@ var url = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/book_inventory_
 var collectionPromise = MongoClient.
     connect(url).
     then(function (db) {
-        return db.collection('books_kwasniewski');
+        return db.collection('books_wiskra');
     });
 
 module.exports = {

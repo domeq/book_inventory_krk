@@ -1,12 +1,13 @@
 var _ = require('lodash');
-var baseConfig = require('./base').config;
 var configurator = require('./base').configurator;
 
-var testConfig = {
-    name: 'book-inventory-test-app',
-    log_drains: []
+var prod = {
+    name: 'book-inventory-wiskra-test',
+    config_vars: {
+        name: "wiskra-test"
+    }
 };
 
-var config = _.merge({}, baseConfig, testConfig);
 
+var config = _.merge({}, require('./base').config, prod);
 configurator(config);
