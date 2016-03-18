@@ -15,7 +15,16 @@ module.exports = function(stockRepository) {
             stockRepository.getCount(req.params.isbn).
                 then(function (result) {
                     if (result !== null) {
-                        res.status(200).json({count: result});
+                        res.status(200);
+                        res.format({
+                            html: function(){
+                                res.send(`${result} books left`);
+                            },
+                            json: function(){
+                                res.json({count: result});
+                            }
+                        });
+
                     } else {
                         next();
                         //res.status(404).json({error: 'No book with ISBN: ' + req.params.isbn});
